@@ -24,6 +24,10 @@ let package = Package(
             name: "Audio",
             targets: ["Audio"]
         ),
+        .library(
+            name: "HapticFeedback",
+            targets: ["HapticFeedback"]
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -40,6 +44,9 @@ let package = Package(
         .target(
             name: "Audio",
             dependencies: ["FileSystem"]
+        ),
+        .target(
+            name: "HapticFeedback"
         ),
         .testTarget(
             name: "UtilsTests",
