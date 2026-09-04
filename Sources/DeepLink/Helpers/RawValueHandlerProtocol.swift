@@ -2,7 +2,7 @@
 import Foundation
 
 /// Обработчик «сырых» значений
-public protocol RawValueHandlerProtocol<RawValue>: AnyObject, Sendable {
+public protocol RawValueHandlerProtocol<RawValue>: AnyObject {
     associatedtype RawValue
     
     /// Попытается обработать «сырое» значение и вернет результат обработки
