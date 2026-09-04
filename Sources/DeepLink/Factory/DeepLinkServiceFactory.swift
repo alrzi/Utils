@@ -2,8 +2,7 @@
 import Foundation
 
 /// Фабрика сервиса обработки ссылок
-@MainActor
-public final class DeepLinkServiceFactory {
+public final class DeepLinkServiceFactory: Sendable {
     public init() { }
     
     /// Создает сервис обработки ссылок
