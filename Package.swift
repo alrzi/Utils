@@ -5,11 +5,20 @@ import PackageDescription
 
 let package = Package(
     name: "Utils",
+    platforms: [.iOS(.v16), .macCatalyst(.v15), .watchOS(.v8), .macOS(.v12)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Utils",
             targets: ["Utils"]
+        ),
+        .library(
+            name: "FileSystem",
+            targets: ["FileSystem"]
+        ),
+        .library(
+            name: "Audio",
+            targets: ["Audio"]
         ),
     ],
     targets: [
@@ -18,9 +27,17 @@ let package = Package(
         .target(
             name: "Utils"
         ),
+        .target(
+            name: "FileSystem"
+        ),
+        .target(
+            name: "Audio",
+            dependencies: ["FileSystem"]
+        ),
         .testTarget(
             name: "UtilsTests",
             dependencies: ["Utils"]
         ),
-    ]
+    ],
+    swiftLanguageModes: [.v6]
 )
