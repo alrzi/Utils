@@ -1,7 +1,8 @@
 
 import Foundation
 
-actor DeepLinkService<RawValue>: DeepLinkServiceProtocol where RawValue: Hashable & Sendable {
+@MainActor
+final class DeepLinkService<RawValue>: DeepLinkServiceProtocol where RawValue: Hashable & Sendable {
     private var state = DeepLinkServiceState<RawValue>()
     
     func register<Handler>(

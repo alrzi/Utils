@@ -24,8 +24,9 @@ public protocol MainActorDeepLinkServiceProtocol<RawValue>: DeepLinkServiceProto
     func handle(rawValue: RawValue) -> DeepLinkHandlingResult
 }
 
+@MainActor
 final class MainActorDeepLinkService<RawValue: Hashable & Sendable>: MainActorDeepLinkServiceProtocol {
-    @MainActor private var state = DeepLinkServiceState<RawValue>()
+	private var state = DeepLinkServiceState<RawValue>()
     
     func register<Handler>(handler: Handler) where Handler: DeepLinkHandlerProtocol, RawValue == Handler.RawValue {
         state.register(handler: handler)
