@@ -13,6 +13,10 @@ let package = Package(
             targets: ["Utils"]
         ),
         .library(
+            name: "DeepLink",
+            targets: ["DeepLink"]
+        ),
+        .library(
             name: "FileSystem",
             targets: ["FileSystem"]
         ),
@@ -26,6 +30,9 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "Utils"
+        ),
+        .target(
+            name: "DeepLink"
         ),
         .target(
             name: "FileSystem"
