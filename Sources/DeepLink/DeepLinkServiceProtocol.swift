@@ -2,8 +2,7 @@
 import Foundation
 
 /// Сервис обработки ссылок
-@MainActor
-public protocol DeepLinkServiceProtocol<RawValue>: AnyObject {
+public protocol DeepLinkServiceProtocol<RawValue>: Sendable {
     /// Тип «сырого» значения, которое может быть обработано этим сервисом
     associatedtype RawValue: Sendable
     

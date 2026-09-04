@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct DeepLinkServiceState<RawValue> where RawValue: Hashable & Sendable {
+struct DeepLinkServiceState<RawValue>: Sendable where RawValue: Hashable & Sendable {
     private var handlers: [WeakHandler] = []
     private var rawValueQueue: [RawValue] = []
     
